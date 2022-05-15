@@ -1,3 +1,6 @@
+:root {
+  --size: 30rem;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,52 +8,49 @@
 }
 img {
   vertical-align: top;
-  width: 30rem;
-  height: 30rem;
+  width: var(--size);
+  height: var(--size);
 }
 body {
-  background-color: #383838;
-}
-main {
   display: flex;
-  height: 100vh;
+  justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #383838;
 }
 .radio {
   display: none;
 }
-.slider-container {
-background-color: #066163;
-color: #F2F2F2;
-width: 32rem;
-margin: 0 auto;
-padding: 1rem 0;
-border-radius: 1rem;
-}
 .slider {
+  background-color: #066163;
+  color: #f2f2f2;
   display: grid;
   grid-template-columns: 60% 40%;
-  grid-template-areas: 
-  'image image'
-  'caption buttons'
-  ;
+  grid-template-areas:
+    'image image'
+    'caption buttons';
+  justify-items: center;
+  align-items: center;
   row-gap: 1rem;
-  margin: 0 auto;
-  width: 30rem;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
 }
 .image-group {
-  display: inline-flex;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   overflow: hidden;
-  width: 30rem;
+  width: var(--size);
   scroll-behavior: smooth;
   grid-area: image;
-  justify-self: center;
   border-radius: 1rem;
   user-select: none;
 }
 .image {
-  box-sizing: border-box;
-  transition: .8s;
+  width: 100%;
+  transition: 0.8s;
 }
 .caption-wrapper {
   grid-area: caption;
@@ -62,7 +62,7 @@ border-radius: 1rem;
 }
 .caption {
   height: 100%;
-  transition: .8s;
+  transition: 0.8s;
 }
 .btn-wrapper {
   grid-area: buttons;
@@ -79,7 +79,7 @@ border-radius: 1rem;
   user-select: none;
 }
 .btn span {
-  border: 1px solid #CDBE78;
+  border: 1px solid #cdbe78;
   border-radius: 100%;
   width: 1.8rem;
   height: 1.8rem;
@@ -88,8 +88,8 @@ border-radius: 1rem;
   align-items: center;
 }
 .btn span:hover {
-  transition: all .4s;
-  background-color: #F2F2F2;
+  transition: all 0.4s;
+  background-color: #f2f2f2;
   color: #383838;
 }
 #radio1:checked ~ .image-group > .image {
@@ -121,24 +121,20 @@ border-radius: 1rem;
 #radio2:checked ~ .btn-wrapper > #btn2 span,
 #radio3:checked ~ .btn-wrapper > #btn3 span,
 #radio4:checked ~ .btn-wrapper > #btn4 span {
-  transition: all .4s;
-  background-color: #CDBE78;
+  transition: all 0.4s;
+  background-color: #cdbe78;
   color: #383838;
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+    --size: 80vw;
+  }
   .slider {
     grid-template-columns: auto;
-    grid-template-areas: 
-    'image'
-    'buttons'
-    'caption'
-    ;
-  }
-  .btn-wrapper {
-    justify-self: center;
-  }
-  .caption-wrapper {
-    justify-self: center;
+    grid-template-areas:
+      'image'
+      'buttons'
+      'caption';
   }
 }
