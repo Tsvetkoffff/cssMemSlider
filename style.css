@@ -6,12 +6,11 @@
 img {
   vertical-align: top;
   width: 30rem;
+  height: 30rem;
 }
-
 body {
   background-color: #383838;
 }
-
 main {
   display: flex;
   height: 100vh;
@@ -20,7 +19,6 @@ main {
 .radio {
   display: none;
 }
-
 .slider-container {
 background-color: #066163;
 color: #F2F2F2;
@@ -57,7 +55,7 @@ border-radius: 1rem;
 .caption-wrapper {
   grid-area: caption;
   justify-self: start;
-  align-self: top;
+  align-self: baseline;
   height: 3.3rem;
   overflow: hidden;
   scroll-behavior: smooth;
@@ -69,7 +67,7 @@ border-radius: 1rem;
 .btn-wrapper {
   grid-area: buttons;
   justify-self: end;
-  align-self: top;
+  align-self: baseline;
 }
 .btn {
   cursor: pointer;
